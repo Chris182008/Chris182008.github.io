@@ -31,8 +31,13 @@ function parseCSV(csvText) {
         .map(line => {
             if (!line.trim()) return null; // Skip empty lines
             const [name, status, wait] = line.split(',').map(v => v.trim());
+            
+            // Special handling for "The Volcano"
+            const id = name === 'The Volcano' ? 'volcano' : 
+                      name.toLowerCase().replace(/\s+/g, '-');
+            
             return {
-                id: name.toLowerCase().replace(/\s+/g, '-'), // "Spinning Coaster" -> "spinning-coaster"
+                id: id,
                 name: name,
                 status: status || 'CLOSED',
                 wait: wait || '0'
