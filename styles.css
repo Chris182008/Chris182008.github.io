@@ -1,1409 +1,312 @@
-/* Base styles */
-
-
-
-
-
-
-
-:root {
-
-
-
-
-
-
-
-    --primary-color: #007AFF;
-
-
-
-
-
-
-
-    --background-color: #F2F2F7;
-
-
-
-
-
-
-
-    --card-background: #FFFFFF;
-
-
-
-
-
-
-
-    --text-color: #1C1C1E;
-
-
-
-
-
-
-
-    --success-color: #34C759;
-
-
-
-
-
-
-
-    --error-color: #FF3B30;
-
-
-
-
-
-
-
-    --maintenance-color: #FF9500;
-
-
-
-
-
-
-
-    --secondary-text: #6C6C70;
-
-
-
-
-
-
-
-    --card-shadow: 0 2px 8px rgba(0,0,0,0.12);
-
-
-
-
-
-
-
-    --safe-area-top: env(safe-area-inset-top, 44px);
-
-
-
-
-
-
-
-    --wood-overlay: rgba(0,0,0,0.7);
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-body {
-
-
-
-
-
-
-
-    margin: 0;
-
-
-
-
-
-
-
-    padding: 0;
-
-
-
-
-
-
-
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-
-
-
-
-
-
-    background-image: url('images/wood.jpg');
-
-
-
-
-
-
-
-    background-size: 200%;
-
-
-
-
-
-
-
-    background-attachment: fixed;
-
-
-
-
-
-
-
-    -webkit-font-smoothing: antialiased;
-
-
-
-
-
-
-
-    line-height: 1.5;
-
-
-
-
-
-
-
-    color: var(--text-color);
-
-
-
-
-
-
-
-    min-height: 100vh;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.container {
-
-
-
-
-
-
-
-    max-width: 100%;
-
-
-
-
-
-
-
-    padding: 16px;
-
-
-
-
-
-
-
-    padding-top: var(--safe-area-top);
-
-
-
-
-
-
-
-    background-color: var(--wood-overlay);
-
-
-
-
-
-
-
-    min-height: 100vh;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Header */
-
-
-
-
-
-
-
-.main-header {
-
-
-
-
-
-
-
-    position: relative;
-
-
-
-
-
-
-
-    padding: 20px 0;
-
-
-
-
-
-
-
-    margin: -16px -16px 24px -16px;
-
-
-
-
-
-
-
-    text-align: center;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.main-header img {
-
-
-
-
-
-
-
-    max-width: 300px;
-
-
-
-
-
-
-
-    height: auto;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.main-header h1 {
-
-
-
-
-
-
-
-    font-size: 40px;
-
-
-
-
-
-
-
-    font-weight: 700;
-
-
-
-
-
-
-
-    margin: 0;
-
-
-
-
-
-
-
-    letter-spacing: -0.5px;
-
-
-
-
-
-
-
-    color: white;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.stats-bar {
-
-
-
-
-
-
-
-    display: flex;
-
-
-
-
-
-
-
-    justify-content: center;
-
-
-
-
-
-
-
-    gap: 24px;
-
-
-
-
-
-
-
-    margin-top: 20px;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.stat {
-
-
-
-
-
-
-
-    text-align: center;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.stat-value {
-
-
-
-
-
-
-
-    font-size: 24px;
-
-
-
-
-
-
-
-    font-weight: 700;
-
-
-
-
-
-
-
-    margin-bottom: 4px;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.stat-label {
-
-
-
-
-
-
-
-    font-size: 13px;
-
-
-
-
-
-
-
-    text-transform: uppercase;
-
-
-
-
-
-
-
-    letter-spacing: 0.5px;
-
-
-
-
-
-
-
-    opacity: 0.9;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Ride Grid */
-
-
-
-
-
-
-
-.rides-grid {
-
-
-
-
-
-
-
-    display: grid;
-
-
-
-
-
-
-
-    grid-template-columns: 1fr;
-
-
-
-
-
-
-
-    gap: 20px;
-
-
-
-
-
-
-
-    padding: 20px;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Ride Cards */
-
-
-
-
-
-
-
-.ride-card {
-
-
-
-
-
-
-
-    background: var(--card-background);
-
-
-
-
-
-
-
-    border-radius: 16px;
-
-
-
-
-
-
-
-    padding: 24px;
-
-
-
-
-
-
-
-    gap: 12px;
-
-
-
-
-
-
-
-    min-height: 44px;
-
-
-
-
-
-
-
-    text-decoration: none;
-
-
-
-
-
-
-
-    color: var(--text-color);
-
-
-
-
-
-
-
-    position: relative;
-
-
-
-
-
-
-
-    box-shadow: var(--card-shadow);
-
-
-
-
-
-
-
-    transition: all 0.3s ease;
-
-
-
-
-
-
-
-    display: flex;
-
-
-
-
-
-
-
-    flex-direction: column;
-
-
-
-
-
-
-
-    justify-content: space-between;
-
-
-
-
-
-
-
-    border: 1px solid rgba(0,0,0,0.05);
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.ride-card:active {
-
-
-
-
-
-
-
-    transform: scale(0.98);
-
-
-
-
-
-
-
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.status-badge {
-
-    position: absolute;
-
-    right: 20px;
-
-    top: 20px;
-
-    padding: 6px 16px;
-
-    border-radius: 20px;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    color: white;
-
-    transition: background-color 0.3s ease;
-
-}
-
-
-
-/* Add loading animation */
-.status-badge.loading {
-
-    background-color: var(--secondary-text);
-
-    animation: pulse 1.5s infinite;
-
-}
-
-
-
-@keyframes pulse {
-
-    0% { opacity: 0.6; }
-
-    50% { opacity: 1; }
-
-    100% { opacity: 0.6; }
-
-}
-
-
-
-.status-badge.open {
-
-    background-color: var(--success-color);
-
-}
-
-
-
-.status-badge.closed {
-
-    background-color: var(--error-color);
-
-}
-
-
-
-.status-badge.maintenance {
-
-    background-color: var(--maintenance-color);
-
-}
-
-
-
-.status-badge.error {
-
-    background-color: var(--secondary-text);
-
-    opacity: 0.7;
-
-}
-
-
-
-.ride-card h2 {
-
-
-
-
-
-
-
-    font-size: 22px;
-
-
-
-
-
-
-
-    font-weight: 700;
-
-
-
-
-
-
-
-    margin: 0 0 12px 0;
-
-
-
-
-
-
-
-    letter-spacing: -0.3px;
-
-
-
-
-
-
-
-    padding-right: 120px;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.wait-time {
-
-
-
-
-
-
-
-    font-size: 15px;
-
-
-
-
-
-
-
-    font-weight: 500;
-
-
-
-
-
-
-
-    color: var(--text-color);
-
-
-
-
-
-
-
-    opacity: 0.8;
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Media Queries */
-
-
-
-
-
-
-
-@media (min-width: 768px) {
-
-
-
-
-
-
-
-    .rides-grid {
-
-
-
-
-
-
-
-        grid-template-columns: repeat(2, 1fr);
-
-
-
-
-
-
-
-        gap: 24px;
-
-
-
-
-
-
-
-        padding: 24px;
-
-
-
-
-
-
-
-    }
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-    .container {
-
-
-
-
-
-
-
-        max-width: 1200px;
-
-
-
-
-
-
-
-        margin: 0 auto;
-
-
-
-
-
-
-
-    }
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-    .main-header {
-
-
-
-
-
-
-
-        border-radius: 24px;
-
-
-
-
-
-
-
-        margin: 0 0 24px 0;
-
-
-
-
-
-
-
-    }
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width: 1024px) {
-
-
-
-
-
-
-
-    .rides-grid {
-
-
-
-
-
-
-
-        grid-template-columns: repeat(3, 1fr);
-
-
-
-
-
-
-
-        gap: 24px;
-
-
-
-
-
-
-
-    }
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (prefers-color-scheme: dark) {
-
-
-
-
-
-
-
-    :root {
-
-
-
-
-
-
-
-        --background-color: #000000;
-
-
-
-
-
-
-
-        --card-background: #1C1C1E;
-
-
-
-
-
-
-
-        --text-color: #FFFFFF;
-
-
-
-
-
-
-
-        --secondary-text: #8E8E93;
-
-
-
-
-
-
-
-        --card-shadow: 0 2px 8px rgba(0,0,0,0.3);
-
-
-
-
-
-
-
-    }
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-    .ride-card {
-
-
-
-
-
-
-
-        border-color: rgba(255,255,255,0.1);
-
-
-
-
-
-
-
-    }
-
-
-
-
-
-
-
-} 
-
-
-
-
-
-
-
+/* Base styles */
+:root {
+    --primary-color: #007AFF;
+    --background-color: #F2F2F7;
+    --card-background: #FFFFFF;
+    --text-color: #1C1C1E;
+    --success-color: #34C759;
+    --error-color: #FF3B30;
+    --maintenance-color: #FF9500;
+    --secondary-text: #6C6C70;
+    --card-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    --safe-area-top: env(safe-area-inset-top, 44px);
+    --wood-overlay: rgba(0,0,0,0.7);
+    
+    /* Typography */
+    --min-text-size: 11px;      /* Apple minimum text size */
+    --body-text-size: 16px;     /* Comfortable reading size */
+    --heading-text-size: 20px;  /* Clear visual hierarchy */
+    
+    /* Colors */
+    --text-on-dark: rgba(255, 255, 255, 0.95);  /* Improved contrast on dark backgrounds */
+    --text-on-light: rgba(0, 0, 0, 0.9);        /* Improved contrast on light backgrounds */
+    
+    /* Spacing */
+    --content-spacing: 16px;
+    --card-spacing: 20px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-image: url('images/wood.jpg');
+    background-size: 200%;
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    color: var(--text-color);
+    min-height: 100vh;
+    font-size: var(--body-text-size);
+}
+
+.container {
+    max-width: 100%;
+    padding: var(--content-spacing);
+    padding-top: max(var(--content-spacing), var(--safe-area-top));
+    background-color: var(--wood-overlay);
+    min-height: 100vh;
+    display: flex;           /* Add flex display */
+    flex-direction: column;  /* Stack children vertically */
+}
+
+/* Header */
+.main-header {
+    position: relative;
+    padding: 20px 0;
+    margin: -16px -16px 24px -16px;
+    text-align: center;
+}
+
+.main-header img {
+    max-width: 300px;
+    height: auto;
+}
+
+.main-header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.5px;
+    color: var(--text-on-dark);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Stats Section */
+.stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: max(var(--min-text-size), 13px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}
+
+/* Ride Grid */
+.rides-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--card-spacing);
+    padding: 0;             /* Remove padding from grid */
+    margin: 0 auto;         /* Center the grid */
+    width: 100%;           /* Full width on mobile */
+    max-width: 500px;      /* Limit width for larger screens */
+}
+
+/* Ride Cards */
+.ride-card {
+    background: var(--card-background);
+    border-radius: 16px;
+    padding: 6px 8px 6px 6px;  /* Even more compact padding */
+    min-height: 70px;          /* Slightly reduce minimum height */
+    gap: 6px;                  /* Tighter gap */
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.ride-card:active {
+    transform: scale(0.98);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.status-badge {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    padding: 3px 6px;
+    font-size: 11px;     /* Minimum readable size */
+    border-radius: 12px; /* Smaller radius for compact look */
+    font-weight: 600;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* Status Badge States */
+.status-badge.loading {
+    background-color: var(--secondary-text);
+    animation: pulse 1.5s infinite;
+}
+
+.status-badge.open {
+    background-color: var(--success-color);
+}
+
+.status-badge.closed {
+    background-color: var(--error-color);
+}
+
+.status-badge.maintenance {
+    background-color: var(--maintenance-color);
+}
+
+.status-badge.error {
+    background-color: var(--secondary-text);
+    opacity: 0.7;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.ride-card h2 {
+    font-size: 16px;     /* Smaller font for mobile */
+    margin: 0 0 2px 0;   /* Tighter margin */
+    padding-right: 65px; /* Less space needed for smaller badge */
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wait-time {
+    font-size: 13px;    /* Smaller wait time text */
+    margin: 0;          /* Remove any margin */
+    font-weight: 500;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Add styles for card images */
+.ride-card-image {
+    width: 70px;        /* Smaller images on mobile */
+    height: 70px;
+    border-radius: 8px; /* Smaller radius */
+    object-fit: cover;
+    flex-shrink: 0;
+    margin-left: 0;      /* Ensure no left margin */
+}
+
+/* Adjust content wrapper */
+.ride-card-content {
+    flex: 1;
+    min-width: 0;        /* Allow text truncation */
+}
+
+/* Media Queries */
+@media (min-width: 375px) {
+    .ride-card {
+        padding: 8px 12px 8px 8px;
+        min-height: 80px;
+        gap: 8px;
+    }
+
+    .ride-card-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+    }
+
+    .ride-card h2 {
+        font-size: 18px;
+        padding-right: 75px;
+    }
+
+    .status-badge {
+        right: 8px;
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        --content-spacing: 24px;
+        --card-spacing: 24px;
+    }
+
+    .rides-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--card-spacing);
+        max-width: 900px;   /* Increased max-width for 2 columns */
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .main-header {
+        border-radius: 24px;
+        margin: 0 0 24px 0;
+    }
+
+    .ride-card {
+        padding: 12px 16px 12px 12px;  /* Adjusted padding for larger screens */
+        gap: 12px;
+    }
+
+    .ride-card-image {
+        width: 100px;    /* Larger images on tablet/desktop */
+        height: 100px;
+        border-radius: 12px;
+    }
+
+    .ride-card h2 {
+        padding-right: 90px;  /* More space for badge on larger screens */
+        margin: 0 0 8px 0;
+    }
+
+    .wait-time {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .rides-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;  /* Increased max-width for 3 columns */
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #000000;
+        --card-background: #1C1C1E;
+        --text-color: #FFFFFF;
+        --secondary-text: #8E8E93;
+        --card-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    
+    .ride-card {
+        border-color: rgba(255,255,255,0.1);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
