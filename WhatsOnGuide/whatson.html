@@ -9,27 +9,10 @@
     body {
       margin: 0;
       background: #000;
-      color: #fff;
-      text-align: center;
     }
 
     .gallery {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .gallery a {
-      display: block;
-      max-width: 100%;
-      margin: 10px 0;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
+      display: none; /* hide thumbnails since we auto-open */
     }
   </style>
 </head>
@@ -47,10 +30,9 @@
   </a>
 </div>
 
-<!-- PhotoSwipe Core -->
-<script src="https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.min.js" type="module"></script>
 <script type="module">
   import PhotoSwipeLightbox from 'https://unpkg.com/photoswipe@5/dist/photoswipe-lightbox.esm.min.js';
+  import PhotoSwipe from 'https://unpkg.com/photoswipe@5/dist/photoswipe.esm.min.js';
 
   const lightbox = new PhotoSwipeLightbox({
     gallery: '#gallery',
@@ -59,6 +41,13 @@
   });
 
   lightbox.init();
+
+  // Wait for lightbox to fully initialize before opening
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      lightbox.loadAndOpen(0); // Open first image
+    }, 100); // small delay to ensure DOM readiness
+  });
 </script>
 
 </body>
