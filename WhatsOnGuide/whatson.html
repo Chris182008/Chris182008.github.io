@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
   <title>Wristband Info Viewer</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      background-color: #000;
+      background: #000;
       overflow: hidden;
     }
     .swiper-container {
@@ -20,36 +21,49 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+    }
+    .panzoom {
+      touch-action: none;
+      max-width: 100%;
+      max-height: 100%;
     }
     img {
       max-width: 100%;
       max-height: 100%;
-      object-fit: contain;
+      height: auto;
+      width: auto;
+      display: block;
     }
   </style>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
   <div class="swiper-container">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="1.jpg" alt="Green & Pink Day"></div>
-      <div class="swiper-slide"><img src="2.jpg" alt="VIP Info"></div>
-      <div class="swiper-slide"><img src="3.jpg" alt="Yellow & Purple Day"></div>
+      <div class="swiper-slide"><div class="panzoom"><img src="1.jpg" alt="Green & Pink Day" /></div></div>
+      <div class="swiper-slide"><div class="panzoom"><img src="2.jpg" alt="VIP Info" /></div></div>
+      <div class="swiper-slide"><div class="panzoom"><img src="3.jpg" alt="Yellow & Purple Day" /></div></div>
     </div>
   </div>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/@panzoom/panzoom@9.4.0/dist/panzoom.min.js"></script>
   <script>
     const swiper = new Swiper('.swiper-container', {
-      loop: true,
+      loop: false,
       spaceBetween: 10,
       centeredSlides: true,
       slidesPerView: 1,
       grabCursor: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+    });
+
+    // Enable panzoom on all slides
+    document.querySelectorAll('.panzoom').forEach(el => {
+      Panzoom(el, {
+        maxScale: 5,
+        minScale: 1,
+        contain: 'outside'
+      });
     });
   </script>
 </body>
