@@ -13,26 +13,27 @@
       background: #000;
       overflow: hidden;
     }
+
     .swiper-container {
       width: 100%;
       height: 100vh;
     }
+
     .swiper-slide {
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      overflow: auto; /* allow scrolling */
     }
+
     .panzoom {
       touch-action: none;
-      max-width: 100%;
-      max-height: 100%;
     }
+
     img {
-      max-width: 100%;
-      max-height: 100%;
+      max-width: none; /* allow full zoom beyond container */
+      width: 100%;
       height: auto;
-      width: auto;
       display: block;
     }
   </style>
@@ -52,17 +53,17 @@
     const swiper = new Swiper('.swiper-container', {
       loop: false,
       spaceBetween: 10,
-      centeredSlides: true,
+      centeredSlides: false,
       slidesPerView: 1,
-      grabCursor: true,
+      grabCursor: true
     });
 
-    // Enable panzoom on all slides
     document.querySelectorAll('.panzoom').forEach(el => {
       Panzoom(el, {
         maxScale: 5,
         minScale: 1,
-        contain: 'outside'
+        contain: 'outside',
+        panOnlyWhenZoomed: true
       });
     });
   </script>
